@@ -14,7 +14,6 @@ estado_camara = False
 
 caracter_modelo = joblib.load('modelo_entrenado.pkl')
 
-
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
