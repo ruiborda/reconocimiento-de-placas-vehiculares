@@ -4,3 +4,6 @@ venv/
 dist
 build
 interfaz.spec
+__pycache__
+dist.rar
+interfaz.exe

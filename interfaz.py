@@ -8,11 +8,15 @@ import random
 import numpy
 import joblib
 import time
-
+#para pyinstaller
+import sklearn
+import sklearn.utils._weight_vector
 vs = None
 estado_camara = False
 
-caracter_modelo = joblib.load('modelo_entrenado.pkl')
+modelo_path = r"modelo_entrenado.pkl"
+caracter_modelo = joblib.load(modelo_path)
+
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -229,7 +233,7 @@ class Ui_MainWindow(object):
                 # para dibujar rectangulos de los caracteres detectados
                 cv2.rectangle(image, (x, y), (x + w, y + h), (255, 0, 0), 1)
                 # para dibujar el los bordes de los caracteres encontrados
-                #cv2.drawContours(image, [c], -1, (0, 255, 0), 1)
+                # cv2.drawContours(image, [c], -1, (0, 255, 0), 1)
         # cv2.imshow(str(random.randint(100000000, 999999999)), image)
         result = []
         for item in box_letters:
